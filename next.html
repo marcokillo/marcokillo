@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ماموریت سری</title>
+  <style>
+    @font-face {
+      font-family: 'IranTypewriter';
+      src: local('Courier New'), monospace;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #f2f2f2;
+      font-family: 'IranTypewriter', monospace;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .tape {
+      background-color: yellow;
+      color: black;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      border-top: 4px solid red;
+      border-bottom: 4px solid red;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      padding: 40px;
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #111;
+      border-radius: 12px;
+      border: 2px solid crimson;
+      box-shadow: 0 0 30px crimson;
+    }
+
+    h1 {
+      color: crimson;
+      text-align: center;
+      font-size: 32px;
+    }
+
+    #message {
+      font-size: 18px;
+      line-height: 2;
+      white-space: pre-line;
+      margin-top: 30px;
+    }
+
+    .envelope {
+      margin-top: 40px;
+      background: repeating-linear-gradient(
+        45deg,
+        black,
+        black 10px,
+        yellow 10px,
+        yellow 20px
+      );
+      color: #000;
+      font-weight: bold;
+      padding: 15px;
+      border: 2px dashed #000;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tape">⚠️ POLICE LINE — DO NOT CROSS — منطقه‌ی قرنطینه شده ⚠️</div>
+
+  <div class="container">
+    <h1>🎯 مامور خوش آمدی</h1>
+    <div id="message"></div>
+    <div class="envelope">📦 حالا وقتشه: پاکت رو باز کن و در حل این پرونده‌ی مرموز کمکمون کن.</div>
+  </div>
+
+  <div class="tape">⚠️ دسترسی فقط برای ماموران سطح بالا — مراقب اطلاعات سری باشید ⚠️</div>
+
+  <script>
+    const text = `
+رمز عبور تأیید شد...
+
+از این لحظه، به‌عنوان یکی از اعضای تیم ویژه‌ی بررسی پرونده «پرتره خاموش» شناخته می‌شی.
+
+این مأموریت ساده نیست. باید ذهن تیز، دقت بالا و شهامت واقعی داشته باشی.
+
+پاکتی که مقابلت قرار داره، حاوی سرنخ‌هایی مهمه. هر چیزی که داخلشه، بخشی از یک پازل بزرگ‌تره...
+
+🚨 هشدار: هر قدم اشتباه، می‌تونه کل مأموریت رو به خطر بندازه.
+
+منتظر تو بودیم. حالا وقتشه... شروع کن.
+    `;
+
+    let i = 0;
+    function typeEffect() {
+      if (i < text.length) {
+        document.getElementById("message").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 30);
+      }
+    }
+    typeEffect();
+  </script>
+
+</body>
+</html>

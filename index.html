@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>ورود محرمانه</title>
+  <style>
+    body {
+      direction: rtl;
+      background-image: url('https://i.imgur.com/RV4P6A2.jpg'); /* کاغذ قدیمی */
+      background-size: cover;
+      font-family: "Courier New", Courier, monospace;
+      color: #2d1f0c;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 240, 0.8);
+      padding: 30px;
+      border: 2px solid #5a3e1b;
+      width: 90%;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000040;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 70%;
+      margin-top: 15px;
+      border: 1px solid #5a3e1b;
+      background-color: #f9f5e9;
+      color: #2d1f0c;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      background-color: #5a3e1b;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .wrong {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 ورود محرمانه</h2>
+    <p>نامی را بنویس که آخرین کلید را در دست دارد...</p>
+    <input type="text" id="answer" placeholder="رمز عبور را وارد کنید">
+    <br>
+    <button onclick="checkAnswer()">بررسی رمز</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      const result = document.getElementById("result");
+
+      if (input === "کاترین") {
+        result.textContent = "✅ درست گفتی! خوش آمدی...";
+        result.className = "result correct";
+        // هدایت به مرحله بعد (در صورت نیاز)
+        setTimeout(() => {
+          window.location.href = "next.html"; // می‌تونی این صفحه رو بسازی
+        }, 2000);
+      } else {
+        result.textContent = "❌ اشتباهه! دوباره امتحان کن...";
+        result.className = "result wrong";
+      }
+    }
+  </script>
+</body>
+</html>
+
+Imgur (https://i.imgur.com/RV4P6A2.jpg)
+Imgur: The magic of the Internet
+Imgur is the easiest way to discover and enjoy the magic of the Internet. It’s where you’ll find the funniest, most informative and inspiring images, memes, GIFs, and visual stories served up in an endless stream of bite-sized fun. Powered by a passionate community of people from all around the world, anyone can join to share cool stuff and vote the best to the top. You’ll always find something on Imgur to make you smile and brighten your day.
