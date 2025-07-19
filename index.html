@@ -4,25 +4,18 @@
   <meta charset="UTF-8" />
   <title>ورود محرمانه</title>
   <style>
-    title {
-  color: #ffffff;
-}
-
-.subtitle {
-  color: #ffffff;
-}
     body {
       direction: rtl;
       background-image: url('https://images.stockcake.com/public/2/1/f/21f3351b-fb2a-4c6c-ab35-ed7c39bf8d34_large/interrogation-room-suspense-stockcake.jpg');
-       background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
 
-  font-family: "Courier New", Courier, monospace;
-  color: #2d1f0c;
-  padding: 100px 20px;
-  text-align: center;
+      font-family: "Courier New", Courier, monospace;
+      color: #2d1f0c;
+      padding: 100px 20px;
+      text-align: center;
     }
 
     .container {
@@ -34,6 +27,20 @@
       margin: auto;
       border-radius: 10px;
       box-shadow: 0 0 15px #0f0;
+    }
+
+    .title {
+      color: #ffffff;
+      text-shadow: 1px 1px 5px #000;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #ffffff;
+      text-shadow: 1px 1px 4px #000;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
 
     input {
@@ -79,8 +86,8 @@
 </head>
 <body>
   <div class="container">
-    <h2>🔐 ورود محرمانه</h2>
-    <p>نامی را بنویس که آخرین کلید را در دست دارد...</p>
+    <h2 class="title">🔐 ورود محرمانه</h2>
+    <p class="subtitle">نامی را بنویس که آخرین کلید را در دست دارد...</p>
     <input type="text" id="answer" placeholder="رمز عبور را وارد کنید" />
     <br />
     <button onclick="checkAnswer()">بررسی رمز</button>
