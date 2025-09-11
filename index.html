@@ -28,14 +28,6 @@
             opacity: 0.3;
             animation: fogMove 20s linear infinite;
         }
-        .blood-drip {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
         .container {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
@@ -55,7 +47,7 @@
             border-right: 3px solid #ff1a1a;
             animation: typing 3s steps(30, end), blinkCursor 0.5s step-end infinite;
         }
-        input[type="password"] {
+        input[type="text"] {
             padding: 10px;
             margin: 15px 0;
             width: 220px;
@@ -66,7 +58,7 @@
             font-family: Arial, sans-serif;
             transition: box-shadow 0.3s;
         }
-        input[type="password"]:focus {
+        input[type="text"]:focus {
             box-shadow: 0 0 15px #ff1a1a;
         }
         button {
@@ -119,93 +111,12 @@
             50% { transform: translateX(5px); }
             75% { transform: translateX(-3px); }
         }
-        @keyframes bloodDrip {0% { transform: translateY(-50px); opacity: 1; }
-            100% { transform: translateY(100vh); opacity: 0; }
-        }
     </style>
 </head>
 <body>
     <div class="fog"></div>
-    <canvas class="blood-drip" id="bloodDrip"></canvas>
     <div class="container">
         <h2>جواب معما سودوکو</h2>
-        <input type="password" id="password" placeholder="رمز عبور">
+        <input type="text" id="password" placeholder="رمز عبور">
         <br>
         <button onclick="checkPassword()">ورود به قلمرو ممنوعه</button>
-        <p id="error" class="error">رمز اشتباه است... تاریکی تو را خواهد بلعید!</p>
-    </div>
-
-    <script>
-        // Check password (case-insensitive)
-        function checkPassword() {
-            const password = document.getElementById("password").value.toLowerCase();
-            const error = document.getElementById("error");
-            if (password === "کاترین") {
-                window.location.href = "profile.html";
-            } else {
-                error.style.display = "block";
-                document.body.style.animation = "screenShake 0.5s";
-                setTimeout(() => { document.body.style.animation = ""; }, 500);
-            }
-        }
-
-        // Blood drip effect
-        const canvas = document.getElementById("bloodDrip");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const drips = [];
-        class BloodDrip {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = -50;
-                this.size = Math.random() * 10 + 5;
-                this.speedY = Math.random() * 2 + 1;
-            }
-            update() {
-                this.y += this.speedY;
-                if (this.y > canvas.height) {
-                    this.y = -50;
-                    this.x = Math.random() * canvas.width;
-                }
-            }
-            draw() {
-                ctx.fillStyle = "rgba(255, 0, 0, 0.7)";
-                ctx.beginPath();
-                ctx.ellipse(this.x, this.y, this.size, this.size * 1.5, 0, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initBloodDrips() {
-            for (let i = 0; i < 10; i++) {
-                drips.push(new BloodDrip());
-            }
-        }
-
-        function animateBloodDrips() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < drips.length; i++) {
-                drips[i].update();
-                drips[i].draw();
-            }
-            requestAnimationFrame(animateBloodDrips);
-        }
-
-        initBloodDrips();
-        animateBloodDrips();
-
-        // Screen shake effect
-        const styleSheet = document.createElement("style");
-        styleSheet.innerHTML = `
-            @keyframes screenShake {
-                0%, 100% { transform: translate(0, 0); }
-                10%, 30%, 50%, 70%, 90% { transform: translate(-10px, 5px); }
-                20%, 40%, 60%, 80% { transform: translate(10px, -5px); }
-            }
-        `;
-        document.head.appendChild(styleSheet);
-    </script>
-</body>
-</html>
