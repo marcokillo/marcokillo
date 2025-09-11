@@ -1,115 +1,170 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <title>ماموریت سری</title>
-  <style>
-    @font-face {
-      font-family: 'IranTypewriter';
-      src: local('Courier New'), monospace;
-    }
-
-    body {
-      background-color: #0a0a0a;
-      color: #f2f2f2;
-      font-family: 'IranTypewriter', monospace;
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
-    }
-
-    .tape {
-      background-color: yellow;
-      color: black;
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-      font-size: 18px;
-      border-top: 4px solid red;
-      border-bottom: 4px solid red;
-      letter-spacing: 2px;
-    }
-
-    .container {
-      padding: 40px;
-      max-width: 800px;
-      margin: 50px auto;
-      background-color: #111;
-      border-radius: 12px;
-      border: 2px solid crimson;
-      box-shadow: 0 0 30px crimson;
-    }
-
-    h1 {
-      color: crimson;
-      text-align: center;
-      font-size: 32px;
-    }
-
-    #message {
-      font-size: 18px;
-      line-height: 2;
-      white-space: pre-line;
-      margin-top: 30px;
-    }
-
-    .envelope {
-      margin-top: 40px;
-      background: repeating-linear-gradient(
-        45deg,
-        black,
-        black 10px,
-        yellow 10px,
-        yellow 20px
-      );
-      color: #000;
-      font-weight: bold;
-      padding: 15px;
-      border: 2px dashed #000;
-      text-align: center;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کاترین مرموز</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+        body {
+            font-family: 'Creepster', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(180deg, #0a0a0a, #2a004a);
+            direction: rtl;
+            overflow: hidden;
+            position: relative;
+        }
+        .fog {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/4N7f5jC.png') repeat-x;
+            opacity: 0.3;
+            animation: fogMove 20s linear infinite;
+        }
+        .blood-drip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+            text-align: center;
+            border: 3px solid #b30000;
+            max-width: 600px;
+            z-index: 1;
+            animation: eerieGlow 3s infinite;
+        }
+        img {
+            max-width: 200px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 3px solid #ff1a1a;
+            animation: imagePulse 4s infinite;
+        }
+        img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #ff1a1a;
+        }
+        h2 {
+            color: #ff1a1a;
+            text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #ff1a1a;
+            animation: typing 3s steps(30, end), blinkCursor 0.5s step-end infinite;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #fff;
+            text-shadow: 0 0 10px #ff1a1a;
+            animation: textFadeIn 2s ease-in;
+        }
+        @keyframes fogMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 2000px 0; }
+        }
+        @keyframes eerieGlow {
+            0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
+            50% { box-shadow: 0 0 50px rgba(255, 0, 0, 0.8); }
+            100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blinkCursor {
+            from { border-right-color: #ff1a1a; }
+            to { border-right-color: transparent; }
+        }
+        @keyframes textFadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes imagePulse {
+            0% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0.7; transform: scale(1); }
+        }
+        @keyframes bloodDrip {
+            0% { transform: translateY(-50px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
 </head>
 <body>
+    <div class="fog"></div>
+    <canvas class="blood-drip" id="bloodDrip"></canvas>
+    <div class="container">
+        <h2>کاترین پیترسون مرموز</h2>
+        <img src="katherine.jpg" alt="عکس کاترین">
+        <p><strong>نام:</strong> کاترین پیترسون</p>
+        <p><strong>سن:</strong> ۳۰ سال</p>
+        <p><strong>شغل:</strong> بازیگر تئاتر</p>
+        <p><strong>وضعیت تأهل:</strong> متاهل</p>
+    </div>
 
-  <div class="tape">⚠️ POLICE LINE — DO NOT CROSS — منطقه‌ی قرنطینه شده ⚠️</div>
+    <script>
+        // Blood drip effect
+        const canvas = document.getElementById("bloodDrip");
+        const ctx = canvas.getContext("2d");
+      anvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-  <div class="container">
-    <h1>🎯 مامور خوش آمدی</h1>
-    <div id="message"></div>
-    <div class="envelope">📦 حالا وقتشه: پاکت رو باز کن و در حل این پرونده‌ی مرموز کمکمون کن.</div>
-  </div>
+        const drips = [];
+        class BloodDrip {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = -50;
+                this.size = Math.random() * 10 + 5;
+                this.speedY = Math.random() * 2 + 1;
+            }
+            update() {
+                this.y += this.speedY;
+                if (this.y > canvas.height) {
+                    this.y = -50;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+            draw() {
+                ctx.fillStyle = "rgba(255, 0, 0, 0.7)";
+                ctx.beginPath();
+                ctx.ellipse(this.x, this.y, this.size, this.size * 1.5, 0, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
 
-  <div class="tape">⚠️ دسترسی فقط برای ماموران سطح بالا — مراقب اطلاعات سری باشید ⚠️</div>
+        function initBloodDrips() {
+            for (let i = 0; i < 10; i++) {
+                drips.push(new BloodDrip());
+            }
+        }
 
-  <script>
-    const text = `
-رمز عبور تأیید شد...
+        function animateBloodDrips() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < drips.length; i++) {
+                drips[i].update();
+                drips[i].draw();
+            }
+            requestAnimationFrame(animateBloodDrips);
+        }
 
-از این لحظه، به‌عنوان یکی از اعضای تیم ویژه‌ی بررسی پرونده «پرتره آخر» شناخته می‌شی.
-
-این مأموریت ساده نیست. باید ذهن تیز، دقت بالا و شهامت واقعی داشته باشی.
-
-پاکتی که مقابلت قرار داره، حاوی سرنخ‌هایی مهمه. هر چیزی که داخلشه، بخشی از یک پازل بزرگ‌تره...
-
-🚨 هشدار: هر قدم اشتباه، می‌تونه کل مأموریت رو به خطر بندازه.
-
-منتظر تو بودیم. حالا وقتشه... شروع کن.
-    `;
-
-    let i = 0;
-    function typeEffect() {
-      if (i < text.length) {
-        document.getElementById("message").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeEffect, 30);
-      }
-    }
-    typeEffect();
-  </script>
-
+        initBloodDrips();
+        animateBloodDrips();
+    </script>
 </body>
-
 </html>
