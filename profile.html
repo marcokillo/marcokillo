@@ -18,16 +18,6 @@
             overflow: hidden;
             position: relative;
         }
-        .fog {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://i.imgur.com/4N7f5jC.png') repeat-x;
-            opacity: 0.3;
-            animation: fogMove 20s linear infinite;
-        }
         .container {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
@@ -53,39 +43,17 @@
         h2 {
             color: #ff1a1a;
             text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid #ff1a1a;
-            animation: typing 3s steps(30, end), blinkCursor 0.5s step-end infinite;
         }
         p {
             font-size: 18px;
             margin: 10px 0;
             color: #fff;
             text-shadow: 0 0 10px #ff1a1a;
-            animation: textFadeIn 2s ease-in;
-        }
-        @keyframes fogMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 2000px 0; }
         }
         @keyframes eerieGlow {
             0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
             50% { box-shadow: 0 0 50px rgba(255, 0, 0, 0.8); }
             100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blinkCursor {
-            from { border-right-color: #ff1a1a; }
-            to { border-right-color: transparent; }
-        }
-        @keyframes textFadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
         }
         @keyframes imagePulse {
             0% { opacity: 0.7; transform: scale(1); }
@@ -95,7 +63,6 @@
     </style>
 </head>
 <body>
-    <div class="fog"></div>
     <div class="container">
         <h2>مشخصات کاترین</h2>
         <img src="katherine.jpg" alt="عکس کاترین">
