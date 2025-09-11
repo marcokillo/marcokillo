@@ -120,3 +120,33 @@
         <input type="text" id="password" placeholder="رمز عبور">
         <br>
         <button onclick="checkPassword()">ورود به قلمرو ممنوعه</button>
+<p id="error" class="error">رمز اشتباه است... تاریکی تو را خواهد بلعید!</p>
+    </div>
+
+    <script>
+        // Check password (case-insensitive)
+        function checkPassword() {
+            const password = document.getElementById("password").value.toLowerCase();
+            const error = document.getElementById("error");
+            if (password === "کاترین") {
+                window.location.href = "profile.html";
+            } else {
+                error.style.display = "block";
+                document.body.style.animation = "screenShake 0.5s";
+                setTimeout(() => { document.body.style.animation = ""; }, 500);
+            }
+        }
+
+        // Screen shake effect
+        const styleSheet = document.createElement("style");
+        styleSheet.innerHTML = `
+            @keyframes screenShake {
+                0%, 100% { transform: translate(0, 0); }
+                10%, 30%, 50%, 70%, 90% { transform: translate(-10px, 5px); }
+                20%, 40%, 60%, 80% { transform: translate(10px, -5px); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>
