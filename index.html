@@ -1,116 +1,114 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جواب معما سودوکو</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-        body {
-            font-family: 'Creepster', cursive;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(180deg, #0a0a0a, #2a004a);
-            direction: rtl;
-            overflow: hidden;
-            position: relative;
-        }
-        .container {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
-            text-align: center;
-            border: 3px solid #b30000;
-            z-index: 1;
-            animation: eerieGlow 3s infinite;
-        }
-        h2 {
-            color: #ff1a1a;
-            text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
-        }
-        .keys {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-        input[type="text"] {
-            padding: 10px;
-            margin: 10px 0;
-            width: 220px;
-            border: 2px solid #b30000;
-            border-radius: 5px;
-            background-color: #222;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            transition: box-shadow 0.3s;
-        }
-        input[type="text"]:focus {
-            box-shadow: 0 0 15px #ff1a1a;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #b30000;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-family: 'Creepster', cursive;
-            font-size: 18px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        button:hover {
-            transform: scale(1.1) rotate(2deg);
-            box-shadow: 0 0 20px #ff1a1a;
-        }
-        .error {
-            color: #ff1a1a;
-            text-shadow: 0 0 10px #ff0000;
-            display: none;
-            animation: violentShake 0.4s;
-        }
-        @keyframes eerieGlow {
-            0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
-            50% { box-shadow: 0 0 50px rgba(255, 0, 0, 0.8); }
-            100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
-        }
-        @keyframes violentShake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-15px); }
-            20%, 40%, 60%, 80% { transform: translateX(15px); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جواب معما سودوکو</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+    body {
+      font-family: 'Creepster', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(180deg, #0a0a0a, #2a004a);
+      direction: rtl;
+      overflow: hidden;
+      position: relative;
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+      text-align: center;
+      border: 3px solid #b30000;
+      z-index: 1;
+      animation: eerieGlow 3s infinite;
+    }
+    h2 {
+      color: #ff1a1a;
+      text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+    }
+    .keys {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      margin: 10px 0;
+      width: 220px;
+      border: 2px solid #b30000;
+      border-radius: 5px;
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      transition: box-shadow 0.3s;
+      text-align: center;
+    }
+    input[type="text"]:focus {
+      box-shadow: 0 0 15px #ff1a1a;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #b30000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Creepster', cursive;
+      font-size: 18px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    button:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 0 20px #ff1a1a;
+    }
+    .error {
+      color: #ff1a1a;
+      text-shadow: 0 0 10px #ff0000;
+      display: none;
+      animation: violentShake 0.4s;
+    }
+    @keyframes eerieGlow {
+      0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
+      50% { box-shadow: 0 0 50px rgba(255, 0, 0, 0.8); }
+      100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
+    }
+    @keyframes violentShake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-15px); }
+      20%, 40%, 60%, 80% { transform: translateX(15px); }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>جواب معما سودوکو</h2>
-        <div class="keys">🔑🔑🔑</div>
-        <br>
-        <input type="text" id="password6" maxlength="6" placeholder="رمز ۶ حرفی">
-        <br>
-        <button onclick="checkPassword()">ورود به صفحه بعد</button>
-        <p id="error" class="error">رمز اشتباه است</p>
-    </div>
+  <div class="container">
+    <h2>جواب معما سودوکو</h2>
+    <div class="keys">🔑🔑🔑</div>
+    <input type="text" id="password6" maxlength="6" placeholder="رمز ۶ حرفی را وارد کنید">
+    <br>
+    <button onclick="checkPassword()">ورود به صفحه بعد</button>
+    <p id="error" class="error">رمز اشتباه است</p>
+  </div>
 
-    <script>
-        function checkPassword() {
-            const password = document.getElementById("password").value.toLowerCase();
-            const password6 = document.getElementById("password6").value.toLowerCase();
-            const error = document.getElementById("error");
+  <script>
+    function checkPassword() {
+      const password6 = document.getElementById("password6").value.trim();
+      const error = document.getElementById("error");
 
-            if (password === "کاترین" && password6 === "abcdef") {
-                window.location.href = "profile.html";
-            } else {
-                error.style.display = "block";
-                document.body.style.animation = "screenShake 0.5s";
-                setTimeout(() => { document.body.style.animation = ""; }, 500);
-                // مخفی کردن پیام بعد از ۲ ثانیه
-                setTimeout(() => { error.style.display = "none"; }, 2000);
-            }
-        }
-    </script>
+      if (password6 === "کاترین") {
+        window.location.href = "profile.html";
+      } else {
+        error.style.display = "block";
+        document.body.style.animation = "screenShake 0.5s";
+        setTimeout(() => { document.body.style.animation = ""; }, 500);
+        // پیام بعد از ۲ ثانیه محو شود
+        setTimeout(() => { error.style.display = "none"; }, 2000);
+      }
+    }
+  </script>
 </body>
 </html>
-
