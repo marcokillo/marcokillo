@@ -32,9 +32,13 @@
             color: #ff1a1a;
             text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
         }
+        .keys {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
         input[type="text"] {
             padding: 10px;
-            margin: 15px 0;
+            margin: 10px 0;
             width: 220px;
             border: 2px solid #b30000;
             border-radius: 5px;
@@ -82,23 +86,29 @@
 <body>
     <div class="container">
         <h2>جواب معما سودوکو</h2>
+        <div class="keys">🔑🔑🔑</div>
         <input type="text" id="password" placeholder="رمز عبور">
         <br>
+        <input type="text" id="password6" maxlength="6" placeholder="رمز ۶ حرفی">
+        <br>
         <button onclick="checkPassword()">ورود به صفحه بعد</button>
-        <p id="error" class="error">رمز اشتباه است... تاریکی تو را خواهد بلعید!</p>
+        <p id="error" class="error">رمز اشتباه است</p>
     </div>
 
     <script>
-        // Check password (case-insensitive)
         function checkPassword() {
             const password = document.getElementById("password").value.toLowerCase();
+            const password6 = document.getElementById("password6").value.toLowerCase();
             const error = document.getElementById("error");
-            if (password === "کاترین") {
+
+            if (password === "کاترین" && password6 === "abcdef") {
                 window.location.href = "profile.html";
             } else {
                 error.style.display = "block";
                 document.body.style.animation = "screenShake 0.5s";
                 setTimeout(() => { document.body.style.animation = ""; }, 500);
+                // مخفی کردن پیام بعد از ۲ ثانیه
+                setTimeout(() => { error.style.display = "none"; }, 2000);
             }
         }
     </script>
