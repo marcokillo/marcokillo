@@ -1,0 +1,566 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-brown: #6b4423;
+    --dark-brown: #3e2723;
+    --light-cream: #8b5c34;
+    --gold: #d4a574;
+    --dark-bg: #1a1a1a;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    color: var(--gold);
+    line-height: 1.6;
+    background: black;
+    overflow-x: hidden;
+    text-align: right;
+    direction: rtl;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background: linear-gradient(1deg, rgba(0, 0, 0, 0.95), rgba(17, 17, 16, 0.95));
+    backdrop-filter: blur(15px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(224, 200, 153, 0.5);
+}
+
+.headertop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    font-size: 48px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.logo-text-wrapper {
+    text-align: right;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    background: linear-gradient(70deg, var(--dark-bg), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 3px;
+}
+
+nav {
+    background: transparent;
+    border-top: 3px solid rgba(255, 217, 113, 0.8);
+    padding: 20px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 2px;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: -60%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-brown), var(--gold));
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ebded1;
+}
+
+nav ul li a:hover::after {
+    transform: translateX(-60%) scaleX(1);
+}
+
+.hero {
+    position: relative;
+    height: 600px;
+    background-image: url(a.jpg);
+    background-size: cover;
+    align-items: center;
+    width: 100%;
+    object-fit: cover;
+
+}
+.hero svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-contant {
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero svg path {
+    fill:#000;
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .hero svg {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.hero-contant {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-contant h1 {
+    font-size: 60px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding: 0;
+    letter-spacing: 10px;
+    text-shadow: 0 4px 20px rgba(233, 213, 102, 0.9)
+}
+
+.hero-contant p {
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 4px;
+    text-shadow: 0 4px 20px rgba(253, 227, 156, 0.9);
+    padding: 20px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.coffe-menu {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 0 40px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px
+}
+
+.section-title h2 {
+    font-size: 35px;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.coffe-card {
+    background: #e0a44a;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    color: #1a1a1a;
+}
+
+.coffe-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(107, 68, 35, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.coffe-card:hover::before {
+    opacity: 1;
+}
+
+.coffe-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(107, 68, 35, 0.2);
+}
+
+.coffe-image {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.coffee-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.espresso {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(0, 0, 0, 0.3)),
+        radial-gradient(circle at 30% 30%, #8B4513 0%, #3e2723 60%, #1a0f0a 100%);
+}
+
+.cappuccino {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(212, 165, 116, 0.3)),
+        radial-gradient(circle at 40% 40%, #f5e6d3 0%, #d4a574 50%, #b8936c 100%);
+}
+
+.caramel {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(201, 165, 90, 0.2)),
+        radial-gradient(circle at 50% 30%, #f4e4c1 0%, #e6c676 40%, #c9a55a 100%);
+}
+
+.coffee-info {
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.coffee-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--dark-brown);
+    font-weight: 700;
+}
+
+.coffee-info .price {
+    color: var(--primary-brown);
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--gold), #c99a5f);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
+}
+
+.cta-section {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--dark-brown) 0%, var(--primary-brown) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '☕️';
+    position: absolute;
+    font-size: 400px;
+    opacity: 0.05;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 900;
+    position: relative;
+}
+
+.cta-section p {
+    color: var(--gold);
+    margin-bottom: 35px;
+    font-size: 18px;
+    font-weight: 300;
+    position: relative;
+}
+
+.find-button {
+    background: #fff;
+    border: none;
+    padding: 18px 50px;
+    font-size: 13px;
+    color: var(--dark-brown);
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.find-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    background: var(--gold);
+    color: #fff;
+}
+/* 🌐 شروع ریسپانسیو */
+
+@media (max-width: 1200px) {
+    .headertop {
+        padding: 0 30px;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    .hero-contant h1 {
+        font-size: 48px;
+    }
+
+    .hero-contant p {
+        font-size: 18px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .logo-text {
+        font-size: 26px;
+    }
+
+    .logo-icon {
+        font-size: 36px;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero-contant h1 {
+        font-size: 40px;
+        letter-spacing: 5px;
+    }
+
+    .hero-contant p {
+        font-size: 16px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .headertop {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    .hero {
+        height: 400px;
+        background-position: center;
+    }
+
+    .hero-contant {
+        text-align: center;
+    }
+
+    .hero-contant h1 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+
+    .hero-contant p {
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding: 10px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .coffee-info h3 {
+        font-size: 20px;
+    }
+
+    .coffee-info .price {
+        font-size: 18px;
+    }
+
+    .cta-section h2 {
+        font-size: 32px;
+    }
+
+    .cta-section p {
+        font-size: 16px;
+    }
+
+    .find-button {
+        padding: 14px 40px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0;
+    }
+
+    .logo-text {
+        font-size: 22px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        height: 320px;
+    }
+
+    .hero-contant h1 {
+        font-size: 26px;
+    }
+
+    .hero-contant p {
+        font-size: 12px;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    .cta-section {
+        padding: 60px 15px;
+    }
+
+    .cta-section h2 {
+        font-size: 26px;
+    }
+
+    .cta-section p {
+        font-size: 14px;
+    }
+
+    .find-button {
+        padding: 12px 30px;
+        font-size: 11px;
+    }
+}
+
