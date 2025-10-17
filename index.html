@@ -1,114 +1,239 @@
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>جواب معما سودوکو</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-    body {
-      font-family: 'Creepster', cursive;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(180deg, #0a0a0a, #2a004a);
-      direction: rtl;
-      overflow: hidden;
-      position: relative;
-    }
-    .container {
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
-      text-align: center;
-      border: 3px solid #b30000;
-      z-index: 1;
-      animation: eerieGlow 3s infinite;
-    }
-    h2 {
-      color: #ff1a1a;
-      text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
-    }
-    .keys {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-    input[type="text"] {
-      padding: 10px;
-      margin: 10px 0;
-      width: 220px;
-      border: 2px solid #b30000;
-      border-radius: 5px;
-      background-color: #222;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      transition: box-shadow 0.3s;
-      text-align: center;
-    }
-    input[type="text"]:focus {
-      box-shadow: 0 0 15px #ff1a1a;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #b30000;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-family: 'Creepster', cursive;
-      font-size: 18px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    button:hover {
-      transform: scale(1.1) rotate(2deg);
-      box-shadow: 0 0 20px #ff1a1a;
-    }
-    .error {
-      color: #ff1a1a;
-      text-shadow: 0 0 10px #ff0000;
-      display: none;
-      animation: violentShake 0.4s;
-    }
-    @keyframes eerieGlow {
-      0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
-      50% { box-shadow: 0 0 50px rgba(255, 0, 0, 0.8); }
-      100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
-    }
-    @keyframes violentShake {
-      0%, 100% { transform: translateX(0); }
-      10%, 30%, 50%, 70%, 90% { transform: translateX(-15px); }
-      20%, 40%, 60%, 80% { transform: translateX(15px); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <h2>جواب معما سودوکو</h2>
-    <div class="keys">🔑🔑🔑</div>
-    <input type="text" id="password6" maxlength="6" placeholder="رمز ۶ حرفی را وارد کنید">
-    <br>
-    <button onclick="checkPassword()">ورود به صفحه بعد</button>
-    <p id="error" class="error">رمز اشتباه است</p>
-  </div>
+    <header class="headertop">
+        <div class="logo-container">
+            <div class="logo-icon">☕️</div>
+            <div class="logo-text-wrapper">
+                <div class="logo-text">کافه شادی</div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li> <a href="#">خانه</a></li>
+                <li> <a href="#">درباره ما</a></li>
+                <li> <a href="#">گالری</a></li>
+                <li> <a href="#">منو</a></li>
+                <li> <a href="#">سفارش</a></li>
+                <li> <a href="#">ارتباط با ما</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-contant">
+            <h1>قهوه‌های ما</h1>
+            <p>بهترین قهوه برای بیدار شدن</p>
+        </div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox=" 0 0 1445 320"><path fill="#27" fill-opacity="1" d="M0,192L60,165.3C120,139,240,85,360,106.7C480,128,600,224,720,261.3C840,299,960,277,1080,245.3C1200,213,1320,171,1380,149.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </section>
+    <section class="coffe-menu">
+        <div class="section-title">
+            <h2>انتخاب ویژه</h2>
+            <p>با عشق و دقت آماده شده</p>
+        </div>
+    <div class="menu-grid">
+            <div class="coffe-card">
+                <div class="coffe-image espresso " style="background-image: url(h.jpg); background-size: cover;">
+                    <span class="badge">محبوب</span>
+                </div>
+                <div class="coffee-info">
+                    <h3>اسپرسو</h3>
+                    <p class="price">۲۵۰,۰۰۰ تومان</p>
+                </div>
+            </div>
 
-  <script>
-    function checkPassword() {
-      const password6 = document.getElementById("password6").value.trim();
-      const error = document.getElementById("error");
+            <div class="coffe-card">
+                <div class="coffe-image cappuccino" style="background-image: url(https://static01.nyt.com/images/2015/10/02/fashion/02CAPP3SUB/02CAPP3SUB-superJumbo.jpg) ; background-size: cover;"></div>
+                <div class="coffee-info">
+                    <h3>کاپوچینو</h3>
+                    <p class="price">۳۲۰,۰۰۰ تومان</p>
+                </div>
+            </div>
 
-      if (password6 === "کاترین") {
-        window.location.href = "profile.html";
-      } else {
-        error.style.display = "block";
-        document.body.style.animation = "screenShake 0.5s";
-        setTimeout(() => { document.body.style.animation = ""; }, 500);
-        // پیام بعد از ۲ ثانیه محو شود
-        setTimeout(() => { error.style.display = "none"; }, 2000);
-      }
-    }
-  </script>
+            <div class="coffe-card">
+                <div class="coffe-image caramel" style="background-image: url(https://blog.okala.com/wp-content/uploads/2024/12/macchiato_.png); background-size: cover;"> 
+                    <span class="badge">جدید</span>
+                </div>
+                <div class="coffee-info">
+                    <h3>کارامل ماکیاتو</h3>
+                    <p class="price">۲۵۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+
+            <div class="coffe-card">
+                <div class="coffe-image americano" style="background-image: url(https://cdn.shopify.com/s/files/1/0669/0966/7619/files/americano-coffee-in-white-cup-crema-on-wood-table-wrexham-bean.webp?v=1745258094); background-size: cover;"></div>
+                <div class="coffee-info">
+                    <h3>آمریکانو</h3>
+                    <p class="price">۲۰۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+
+            <div class="coffe-card">
+                <div class="coffe-image mocha" style="background-image: url(https://kaitsuko.nl/cdn/shop/articles/Mochis_specialite_japonaise_couteau_haut_de_gamme_9dda9e06-3395-4de0-9cb7-20aab5a8d4c1.jpg?v=1738224355); background-size: cover;"></div>
+                <div class="coffee-info">
+                    <h3>موشی</h3>
+                    <p class="price">۲۲۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+
+            <div class="coffe-card">
+                <div class="coffe-image latte" style="background-image: url(https://landalagrillen.se/media/products/2024/09/05/Cafe-Latte-Gelado-de-frente.jpg); background-size: cover;">
+                    <span class="badge">محبوب</span>
+                </div>
+                <div class="coffee-info">
+                    <h3>لاته</h3>
+                    <p class="price">۲۰۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+
+            <div class="coffe-card">
+                <div class="coffe-image flat-white" style="background-image: url(https://luyacoffee.com/wp-content/uploads/2024/05/3.jpg); background-size: cover;"></div>
+                <div class="coffee-info">
+                    <h3>فلت وایت</h3>
+                    <p class="price">۲۵۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+
+            <div class="coffe-card">
+                <div class="coffe-image espresso-panna" style="background-image: url(https://drcoffee.ir/wp-content/uploads/2022/03/espresso-con-panna-8-1-1280x720.jpg); background-size: cover;" ></div>
+                <div class="coffee-info">
+                    <h3>اسپرسو کن پانا</h3>
+                    <p class="price">۴۵۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+
+            <div class="coffe-card">
+                <div class="coffe-image frappuccino " style="background-image: url(https://ghahvedorehami.ir/wp-content/uploads/2025/06/%D9%81%D8%B1%D8%A7%D9%BE%D8%A7%DA%86%DB%8C%D9%86%D9%88.png); background-size: cover;">
+                    <span class="badge">سرد</span>
+                </div>
+                <div class="coffee-info">
+                    <h3>فراپوچینو</h3>
+                    <p class="price">۴۵۰,۰۰۰ تومان</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>هنوز مطمئن نیستید؟</h2>
+            <p>این فقط بخشی از قهوه‌های فوق‌العاده ماست</p>
+            <button class="find-button">نحوه یافتن ما</button>
+        </div>
+    </section>
+
+        <script>
+      
+        const canvas = document.getElementById('canvas3d');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ 
+            canvas: canvas, 
+            alpha: true, 
+            antialias: true 
+        });
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setClearColor(0x000000, 0);
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+        
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const mainLight = new THREE.DirectionalLight(0xfff5e6, 1.2);
+        mainLight.position.set(10, 15, 10);
+        mainLight.castShadow = true;
+        mainLight.shadow.mapSize.width = 2048;
+        mainLight.shadow.mapSize.height = 2048;
+        scene.add(mainLight);
+
+        const rimLight = new THREE.PointLight(0xd4a574, 1.5, 50);
+        rimLight.position.set(-8, 8, -8);
+        scene.add(rimLight);
+
+  
+        const cupGroup = new THREE.Group();
+
+        const cupGeometry = new THREE.CylinderGeometry(1.3, 1, 2.5, 64);
+        const cupMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0xffffff,
+            shininess: 120,
+            specular: 0x888888,
+            reflectivity: 0.5
+        });
+        const cup = new THREE.Mesh(cupGeometry, cupMaterial);
+        cup.castShadow = true;
+        cup.receiveShadow = true;
+        cupGroup.add(cup);
+
+   
+        const coffeeGeometry = new THREE.CylinderGeometry(1.25, 1.25, 1.8, 64);
+        const coffeeMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0x4a2c1a, 
+            transparent: true, 
+            opacity: 0.9,
+            shininess: 80
+        });
+        const coffee = new THREE.Mesh(coffeeGeometry, coffeeMaterial);
+        coffee.position.y = -0.35;
+        coffee.castShadow = true;
+        cupGroup.add(coffee);
+
+       
+        const saucerGeometry = new THREE.CylinderGeometry(1.8, 1.8, 0.1, 64);
+      
+        const saucerMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0xf5f1ed, 
+            shininess: 100 
+        });
+        const saucer = new THREE.Mesh(saucerGeometry, saucerMaterial);
+        saucer.receiveShadow = true;
+        saucer.position.y = -1.3;
+        cupGroup.add(saucer);
+
+        scene.add(cupGroup);
+
+        camera.position.set(0, 2, 5);
+        camera.lookAt(0, 0, 0);
+
+       
+        function animate() {
+            requestAnimationFrame(animate);
+            cupGroup.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+       
+        window.addEventListener('resize', () => {
+            const rect = canvas.getBoundingClientRect();
+            camera.aspect = rect.width / rect.height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(rect.width, rect.height);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
